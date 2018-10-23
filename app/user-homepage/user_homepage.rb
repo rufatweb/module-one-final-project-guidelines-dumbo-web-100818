@@ -15,8 +15,8 @@ def user_homepage
    p "Nothing yet"
    user_homepage
   when  "3"
-   p "buy_stock"
-   user_homepage
+    buy_stock
+   # user_homepage
  when  "4"
    p "sell_stock"
    user_homepage

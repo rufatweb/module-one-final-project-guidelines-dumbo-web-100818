@@ -31,6 +31,6 @@ def sign_in
   end
 
   puts "Welcome to the homepage"
-  user_homepage
+  Stock.find(1).ticker
 
 end
