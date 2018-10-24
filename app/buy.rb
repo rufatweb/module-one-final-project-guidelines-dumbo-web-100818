@@ -1,6 +1,6 @@
 def asking_stock_ticker
   puts "What stock are you looking for?"
-  user_input = gets.chomp
+  user_input = gets.chomp.upcase
 end
 
 def asking_stock_quantity
@@ -28,7 +28,7 @@ def buy_stock
       puts "Sorry you do not have enough money to execute this transaction"
     end
     $user.transactions << Transaction.create(number_of_stocks: quantity, stock_id: stock.id)
-    $usre.stocks << stock
+    # $user.stocks << stock
     user_cash_left = $user.cash - stock.value * quantity
     $user.update cash: user_cash_left
     puts "Congrtualations!!! You have bought #{quantity} of #{stock.ticker}"

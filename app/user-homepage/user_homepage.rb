@@ -9,16 +9,29 @@ def user_homepage
    # binding.pry
   case user_input
   when  "1"
-   $user.cash
+   puts "Your current cash balance is $#{$user.cash}"
    user_homepage
   when  "2"
-   p "Nothing yet"
+    # puts "#{stock_list.keys[0]}"
+    if stock_list == {}
+      puts "You do not have any stock"
+    else
+     puts "You are holding:"
+     stock_list.each do |ticker, num|
+      if num != 0
+       puts "#{ticker}: #{num}"
+      end
+     end
+   end
+
    user_homepage
+
   when  "3"
     buy_stock
-   # user_homepage
+   user_homepage
+
  when  "4"
-   p "sell_stock"
+   sell_stock
    user_homepage
  end
    # binding.pry
