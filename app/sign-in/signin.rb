@@ -6,8 +6,11 @@ user_input = gets.chomp
 end
 #Taking user password
 def password_input
-puts "Please enter your password:"
-user_input = gets.chomp
+  system 'clear'
+# puts "Please enter your password:"
+# user_input = gets.chomp
+prompt = TTY::Prompt.new
+prompt.mask("Please enter your password:")
 end
 
 
@@ -20,17 +23,22 @@ def sign_in
     user_name = user_name_input
     $user = User.find_by user_name: user_name
     if $user == nil
+      system 'clear'
       puts "Cannot find your username"
     end
   end
   # binding.pry
   password = password_input
   while $user.password != password
+    system 'clear'
     puts "Your password is invalid"
     password = password_input
   end
+  system 'clear'
 
-  puts "Welcome to the homepage"
+  puts "                  ================================"
+  puts "                  |       Welcome to Homepage     |"
+  puts "                  ================================"
   user_homepage
 
 end

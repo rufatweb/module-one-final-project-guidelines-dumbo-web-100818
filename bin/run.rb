@@ -1,21 +1,23 @@
 require_relative '../config/environment'
 $user = nil
 
-puts "Welcome to Trade0verFl0w"
 
-def asking_option
-  puts "Enter 1 if you want to sign up, or 2 if you want to sign in"
-  user_input = gets.chomp
-end
+def home_screen
+  system 'clear'
+  puts "                  ================================"
+  puts "                  |    Welcome to Trade0verf0w   |"
+  puts "                  ================================"
 
-
-def user_decision
-  user_input = 0
-  while user_input != "1" && "2"
-    user_input = asking_option
+  prompt = TTY::Prompt.new
+  resp = prompt.select("Please select from one of the following?", ["Create Account", "Sign In"])
+  case resp
+  when "Create Account"
+    system 'clear'
+    sign_up
+  when "Sign In"
+    system 'clear'
+    sign_in
   end
-
-  user_input == "1" ? sign_up : sign_in
 end
 
-user_decision
+home_screen

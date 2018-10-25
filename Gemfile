@@ -7,4 +7,5 @@ gem "pry"
 gem "require_all"
 gem "rake"
 gem "activerecord"
-gem 'tty-color'
+gem 'iex-ruby-client'
+gem 'tty-prompt'

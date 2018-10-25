@@ -7,7 +7,6 @@ end
 def get_ticker(stock_id)
   Stock.find(stock_id).ticker
 end
-
 # get_ticker(1)
 def stock_list
   stock = {}
